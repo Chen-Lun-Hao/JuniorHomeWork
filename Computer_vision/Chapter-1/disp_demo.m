@@ -1,6 +1,6 @@
 clc; 
 clear all; close all;
-I = imread('sweden_input.jpg');
+I = imread('./images/sweden_input.jpg');
 J = histeq(I);
 figure; 
 subplot(2, 2, 1); imshow(I, []); title('ԭͼ');
