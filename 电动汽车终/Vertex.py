@@ -2,11 +2,12 @@
 Description: 节点的结构类
 Author: Xiao
 Date: 2022-11-02 08:37:46
-LastEditTime: 2022-12-29 21:50:57
+LastEditTime: 2023-01-19 21:21:14
 LastEditors: Xiao
 '''
 class Vertex:
-    def __init__(self, X, Y):
+    def __init__(self, name, X, Y):
+        self.name = name
         self.id=[X,Y]#节点id和坐标
         self.edgelist = []
         self.inv = 0#入度
@@ -14,7 +15,17 @@ class Vertex:
     
     def setCost(self,cost):
         self.cost = cost
-        
+    
+    def setValue(self,values):
+        self.lanes = values[0]
+        self.road_type = values[1]
+        self.road_relationship = values[2]
+        self.traffic_flow = values[3]
+        self.charge_station = values[4]
+        self.power = values[5]
+        self.lacharge_stationsnes = values[6]
+        self.Charging_price = values[7]
+
     def setEdge(self,edge):#将边的属性给予节点
         #将边的属性转移至节点[终点，距离，车道数, 类型, 堵塞概率,充电桩距离，充电桩个数，充电桩价格]
         self.edgelist.append([edge.next,edge.length,edge.lanes,edge.road_type,edge.blocking_probability,
