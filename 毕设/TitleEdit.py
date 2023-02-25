@@ -2,18 +2,18 @@
 Description: 
 Author: Xiao
 Date: 2023-02-21 12:29:53
-LastEditTime: 2023-02-21 18:58:46
+LastEditTime: 2023-02-25 14:42:16
 LastEditors: Xiao
 '''
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-# author：mgboy time:2020/8/5
 import sys
-
 from PyQt5.QtCore import pyqtSlot, Qt, QPoint
 from PyQt5.QtGui import QFont, QEnterEvent, QPixmap
 from PyQt5.QtWidgets import QApplication, QMainWindow, QWidget, QDialog, QVBoxLayout, QPushButton
 from PyQt5 import QtCore, QtWidgets
+from QssHelper import CommonHelper
+
 
 # from TitleTest import Ui_Form
 from Ui_Title import Ui_Form
@@ -64,7 +64,7 @@ class TitleWindow(QWidget, Ui_Form):
         self.label.setAlignment(Qt.AlignCenter)
         self.label_2.setStyleSheet('''
                                                 font-family:"方正胖娃_GBK";
-                                               font-size:11px;
+                                               font-size:20px;
                                                ''')
         if self.icon_path:
             # 设置图标
@@ -75,7 +75,7 @@ class TitleWindow(QWidget, Ui_Form):
         else:
             self.label.setStyleSheet('''
                                                 font-family:"Webdings";
-                                               font-size:13px;
+                                               font-size:20px;
                                                color:blue;
                                                ''')
             self.label.setText('~')
@@ -85,7 +85,7 @@ class TitleWindow(QWidget, Ui_Form):
             self.label_2.setText(self.title)
         else:
             # 设置标题
-            self.label_2.setText('我的APP')
+            self.label_2.setText('Adreams')
 
     def _initDrag(self):
         # 设置鼠标跟踪判断扳机默认值
@@ -98,6 +98,7 @@ class TitleWindow(QWidget, Ui_Form):
         self.pushButton_3.setText('r')
         self.pushButton_2.setText('1')
         self.pushButton.setText('0')
+
 
     @pyqtSlot()
     def on_pushButton_clicked(self):
@@ -158,7 +159,7 @@ class TitleWindow(QWidget, Ui_Form):
             self.move_DragPosition = event.globalPos() - self.pos()
             event.accept()
 
-    def mouseMoveEvent(self, QMouseEvent):
+    def mouseMoveEvent(self, QMouseEvent):#鼠标移动
         # 判断鼠标位置切换鼠标手势
         if QMouseEvent.pos() in self._corner_rect:  # QMouseEvent.pos()获取相对位置
             self.setCursor(Qt.SizeFDiagCursor)
@@ -205,52 +206,8 @@ class TitleWindow(QWidget, Ui_Form):
         self.pushButton_3.setProperty('other_name', 'title_bar_pushButton_3')
 
         # Qss美化
-        qssStyle = '''
-                   QWidget[other_name='title_bar_widget']{background-color:#eef0f6;
-                   border-left:0.5px solid lightgray;
-                   border-right:0.5px solid lightgray;
-                   border-top:0.5px solid lightgray;
-                   border-bottom:0.5px solid #e5e5e5;
-                   border-top-left-radius: 5px;
-                   border-top-right-radius: 5px;
-                   }
-                   
-                   QWidget[other_name='title_bar_widget_2']{background-color:#ffffff;
-                   border-left:0.5px solid lightgray;
-                    border-right:0.5px solid lightgray;
-                   border-bottom:0.5px solid #e5e5e5;
-                   border-bottom-left-radius: 5px;
-                   border-bottom-right-radius: 5px;
-                   }
-                   
-                   QPushButton[other_name='title_bar_pushButton']
-                   {
-                   font-family:"Webdings";
-                   text-align:top;
-                   background:#6DDF6D;border-radius:5px;
-                   border:none;
-                   font-size:13px;
-                   }
-                   QPushButton[other_name='title_bar_pushButton']:hover{background:green;}
-                   
-                   QPushButton[other_name='title_bar_pushButton_2']
-                   {
-                   font-family:"Webdings";
-                   background:#F7D674;border-radius:5px;
-                   border:none;
-                   font-size:13px;
-                   }
-                   QPushButton[other_name='title_bar_pushButton_2']:hover{background:yellow;}
-                   
-                   QPushButton[other_name='title_bar_pushButton_3']
-                   {
-                   font-family:"Webdings";
-                   background:#F76677;border-radius:5px;
-                   border:none;
-                   font-size:13px;
-                   }
-                   QPushButton[other_name='title_bar_pushButton_3']:hover{background:red;}
-                   '''
+        stylefile = '毕设/Title.qss'
+        qssStyle = CommonHelper.readQss(stylefile)
         self.setStyleSheet(qssStyle)
 
 

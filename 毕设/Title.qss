@@ -1,0 +1,44 @@
+QWidget[other_name='title_bar_widget']{background-color:#535353;
+    border-left:0.5px solid lightgray;
+    border-right:0.5px solid lightgray;
+    border-top:0.5px solid lightgray;
+    border-bottom:0.5px solid #e5e5e5;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    }
+    
+    QWidget[other_name='title_bar_widget_2']{background-color:#ffffff;
+    border-left:0.5px solid lightgray;
+     border-right:0.5px solid lightgray;
+    border-bottom:0.5px solid #e5e5e5;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    }
+    
+    QPushButton[other_name='title_bar_pushButton']
+    {
+    font-family:"Webdings";
+    text-align:top;
+    background:#ffffff00;border-radius:0px;
+    border:none;
+    font-size:20px;
+    }
+    QPushButton[other_name='title_bar_pushButton']:hover{background:rgb(253, 253, 253);}
+    
+    QPushButton[other_name='title_bar_pushButton_2']
+    {
+    font-family:"Webdings";
+    background:#ffffff00;border-radius:0px;
+    border:none;
+    font-size:20px;
+    }
+    QPushButton[other_name='title_bar_pushButton_2']:hover{background:rgb(255, 255, 255);}
+    
+    QPushButton[other_name='title_bar_pushButton_3']
+    {
+    font-family:"Webdings";
+    background:#ffffff00;border-radius:0px;
+    border:none;
+    font-size:20px;
+    }
+    QPushButton[other_name='title_bar_pushButton_3']:hover{background:rgb(255, 255, 255);}
