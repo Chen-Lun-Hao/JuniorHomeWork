@@ -2,7 +2,7 @@
 Description: 
 Author: Xiao
 Date: 2023-02-25 14:37:23
-LastEditTime: 2023-02-25 14:39:15
+LastEditTime: 2023-02-25 16:26:35
 LastEditors: Xiao
 '''
 
@@ -11,10 +11,12 @@ LastEditors: Xiao
 import sys
 from PyQt5.QtWidgets import QWidget
 from PyQt5.Qt import QPixmap, QPoint, Qt, QPainter
+from PyQt5.QtWidgets import QApplication, QMainWindow,QWidget,QDialog
+from PyQt5 import QtCore
 
+from Ui_Imagehandle import Ui_Form
 
-
-class ImageWindow(QWidget):
+class ImageWindow(QWidget, Ui_Form):
     def __init__(self):
         super(ImageWindow, self).__init__()
         self.img = None
@@ -27,7 +29,23 @@ class ImageWindow(QWidget):
  
     def init_ui(self):
         self.setWindowTitle("ImageBox")
- 
+    
+    def my_Qss(self):
+        # 给标题栏控件设置别的属性名，这样就不会在美化时和新加进来的内容栏窗口的控件有冲突了
+        self.label.setProperty('other_name', 'ImageDisplay')#图片显示窗口
+        self.widget.setProperty('other_name', 'Edit_widget')#编辑区域窗口
+        self.pushButton.setProperty('other_name', 'Painting_button')#笔刷按钮
+        self.pushButton_2.setProperty('other_name', 'Color_button')#颜色选择按钮
+        self.pushButton_3.setProperty('other_name', 'Abrasion_button')#擦除按钮
+        self.widget_2.setProperty('other_name', 'Layout_widget')#图层区域窗口
+
+
+    def wheelEvent(self, event):#使用滚轮实现图片的放大显示
+        if event.x() < 0 and event.y() < 0:#判断鼠标是否在label中
+            
+            return
+        
+
     def set_image(self, img_path):
         """
         open image file
