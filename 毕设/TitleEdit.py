@@ -2,7 +2,7 @@
 Description: 
 Author: Xiao
 Date: 2023-02-21 12:29:53
-LastEditTime: 2023-02-25 14:42:16
+LastEditTime: 2023-03-01 13:29:29
 LastEditors: Xiao
 '''
 #!/usr/bin/env python
@@ -16,7 +16,7 @@ from QssHelper import CommonHelper
 
 
 # from TitleTest import Ui_Form
-from Ui_Title import Ui_Form
+from ui.Ui_Title import Ui_Form
 
 
 class TitleWindow(QWidget, Ui_Form):
@@ -211,12 +211,6 @@ class TitleWindow(QWidget, Ui_Form):
         self.setStyleSheet(qssStyle)
 
 
-if __name__ == "__main__":
-    # 适配2k等高分辨率屏幕,低分辨率屏幕可以缺省
-    QtCore.QCoreApplication.setAttribute(QtCore.Qt.AA_EnableHighDpiScaling)
-    app = QApplication(sys.argv)
-    myWin = TitleWindow()
-    myWin.show()
-    sys.exit(app.exec_())
+
 
 
