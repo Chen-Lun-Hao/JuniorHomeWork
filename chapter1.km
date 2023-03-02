@@ -1,0 +1,769 @@
+{
+    "root": {
+        "data": {
+            "id": "cqv2uk80pw80",
+            "created": 1677676961370,
+            "text": "绪论"
+        },
+        "children": [
+            {
+                "data": {
+                    "id": "cqv2vk5rk140",
+                    "created": 1677677039598,
+                    "text": "1.学习科技信息检索方法的必要性"
+                },
+                "children": [
+                    {
+                        "data": {
+                            "id": "cqv4kpz0o000",
+                            "created": 1677681832465,
+                            "text": "信息检索与利用的问题"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "cqv4ogykr4w0",
+                                    "created": 1677682126304,
+                                    "text": "写作问题"
+                                },
+                                "children": []
+                            },
+                            {
+                                "data": {
+                                    "id": "cqv4ogykr800",
+                                    "created": 1677682126304,
+                                    "text": "整理问题"
+                                },
+                                "children": []
+                            },
+                            {
+                                "data": {
+                                    "id": "cqv4ogylh0o0",
+                                    "created": 1677682126305,
+                                    "text": "总结问题"
+                                },
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "data": {
+                            "id": "cqv4kpz18so0",
+                            "created": 1677681832466,
+                            "text": "Internet带来的机遇与挑战"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "cqv4pdx255k0",
+                                    "created": 1677682198046,
+                                    "text": "易于获得科技知识"
+                                },
+                                "children": []
+                            },
+                            {
+                                "data": {
+                                    "id": "cqv4pdx1xio0",
+                                    "created": 1677682198046,
+                                    "text": "提供丰富的信息获取与成果发布平台"
+                                },
+                                "children": []
+                            },
+                            {
+                                "data": {
+                                    "id": "cqv4pdx2w4g0",
+                                    "created": 1677682198047,
+                                    "text": "易于开展科学研究"
+                                },
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "data": {
+                            "id": "cqv4kpz1oo00",
+                            "created": 1677681832467,
+                            "text": "个人“搜商”需培养"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "cqv4q1k8bs00",
+                                    "created": 1677682249513,
+                                    "text": "“搜商”的定义"
+                                },
+                                "children": []
+                            },
+                            {
+                                "data": {
+                                    "id": "cqv4q1k96lc0",
+                                    "created": 1677682249514,
+                                    "text": "“搜商”的意义"
+                                },
+                                "children": []
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "data": {
+                    "id": "cqv2vk5scpc0",
+                    "created": 1677677039600,
+                    "text": "2.科技信息概念的发展"
+                },
+                "children": [
+                    {
+                        "data": {
+                            "id": "cqv4lewlo7s0",
+                            "created": 1677681886738,
+                            "text": "信息、知识、文献、情报与资料"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "cqv4qqnbp7s0",
+                                    "created": 1677682304120,
+                                    "text": "信息、知识、文献、情报、资料的定义"
+                                },
+                                "children": []
+                            },
+                            {
+                                "data": {
+                                    "id": "cqv4qqnc4f40",
+                                    "created": 1677682304120,
+                                    "text": "五者之间的关系"
+                                },
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "data": {
+                            "id": "cqv4lewljmo0",
+                            "created": 1677681886739,
+                            "text": "信息的用途与信息检索"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "cqv4r8v62o00",
+                                    "created": 1677682343776,
+                                    "text": "信息检索的定义"
+                                },
+                                "children": []
+                            },
+                            {
+                                "data": {
+                                    "id": "cqv4r8v69pk0",
+                                    "created": 1677682343776,
+                                    "text": "信息检索的分类"
+                                },
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "data": {
+                            "id": "cqv4lewlv140",
+                            "created": 1677681886739,
+                            "text": "从文献查阅到信息检索"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "cqv4rpqsi740",
+                                    "created": 1677682380517,
+                                    "text": "文献、信息的变化"
+                                },
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "data": {
+                            "id": "cqv4lewlz800",
+                            "created": 1677681886739,
+                            "text": "科技信息的特点"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "cqv4s58f2xk0",
+                                    "created": 1677682414234,
+                                    "text": "数量庞大"
+                                },
+                                "children": []
+                            },
+                            {
+                                "data": {
+                                    "id": "cqv4s58fbuw0",
+                                    "created": 1677682414235,
+                                    "text": "增长迅速"
+                                },
+                                "children": []
+                            },
+                            {
+                                "data": {
+                                    "id": "cqv4s58foyo0",
+                                    "created": 1677682414235,
+                                    "text": "种类繁多"
+                                },
+                                "children": []
+                            },
+                            {
+                                "data": {
+                                    "id": "cqv4s58fk9s0",
+                                    "created": 1677682414235,
+                                    "text": "内容更新快"
+                                },
+                                "children": []
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "data": {
+                    "id": "cqv2vk5sycw0",
+                    "created": 1677677039601,
+                    "text": "3.科技信息的主要类型及其特征"
+                },
+                "children": [
+                    {
+                        "data": {
+                            "id": "cqv4m59tjnk0",
+                            "created": 1677681944134,
+                            "text": "当代科技信息的主要类型"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "cqv5oh7t7wg0",
+                                    "created": 1677684947972,
+                                    "text": "科技图书"
+                                },
+                                "children": []
+                            },
+                            {
+                                "data": {
+                                    "id": "cqv5oh7tdq00",
+                                    "created": 1677684947972,
+                                    "text": "科技论文"
+                                },
+                                "children": []
+                            },
+                            {
+                                "data": {
+                                    "id": "cqv5oh7sxr40",
+                                    "created": 1677684947972,
+                                    "text": "专利信息"
+                                },
+                                "children": []
+                            },
+                            {
+                                "data": {
+                                    "id": "cqv5oh7su400",
+                                    "created": 1677684947972,
+                                    "text": "标准与产品资料"
+                                },
+                                "children": []
+                            },
+                            {
+                                "data": {
+                                    "id": "cqv5oh7t9sw0",
+                                    "created": 1677684947972,
+                                    "text": "机构组织科技信息"
+                                },
+                                "children": []
+                            },
+                            {
+                                "data": {
+                                    "id": "cqv5oh7t13k0",
+                                    "created": 1677684947972,
+                                    "text": "专业数据库"
+                                },
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "data": {
+                            "id": "cqv4m59tyrc0",
+                            "created": 1677681944135,
+                            "text": "按加工层次分类"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "cqv5p7so4bc0",
+                                    "created": 1677685005830,
+                                    "text": "一次文献"
+                                },
+                                "children": []
+                            },
+                            {
+                                "data": {
+                                    "id": "cqv5p7soo5s0",
+                                    "created": 1677685005831,
+                                    "text": "二次文献"
+                                },
+                                "children": []
+                            },
+                            {
+                                "data": {
+                                    "id": "cqv5p7sp5h40",
+                                    "created": 1677685005831,
+                                    "text": "三次文献"
+                                },
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "data": {
+                            "id": "cqv4m59u0fc0",
+                            "created": 1677681944135,
+                            "text": "按载体分类"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "cqv5ptdfq9k0",
+                                    "created": 1677685052798,
+                                    "text": "印刷型"
+                                },
+                                "children": []
+                            },
+                            {
+                                "data": {
+                                    "id": "cqv5ptdgl740",
+                                    "created": 1677685052799,
+                                    "text": "缩微型"
+                                },
+                                "children": []
+                            },
+                            {
+                                "data": {
+                                    "id": "cqv5ptdg8mw0",
+                                    "created": 1677685052799,
+                                    "text": "声像型"
+                                },
+                                "children": []
+                            },
+                            {
+                                "data": {
+                                    "id": "cqv5ptdgo4o0",
+                                    "created": 1677685052799,
+                                    "text": "机读型"
+                                },
+                                "children": []
+                            },
+                            {
+                                "data": {
+                                    "id": "cqv5ptdg7vs0",
+                                    "created": 1677685052799,
+                                    "text": "网络信息"
+                                },
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "data": {
+                            "id": "cqv4m59u8gw0",
+                            "created": 1677681944135,
+                            "text": "按学科分类"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "cqv5qaqdksw0",
+                                    "created": 1677685090586,
+                                    "text": "分类标准"
+                                },
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "data": {
+                            "id": "cqv4m59uz200",
+                            "created": 1677681944136,
+                            "text": "按发行与传播形式分类"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "cqv5quddpnk0",
+                                    "created": 1677685133335,
+                                    "text": "公开发行"
+                                },
+                                "children": []
+                            },
+                            {
+                                "data": {
+                                    "id": "cqv5qudda9c0",
+                                    "created": 1677685133335,
+                                    "text": "内部发行"
+                                },
+                                "children": []
+                            },
+                            {
+                                "data": {
+                                    "id": "cqv5quddl940",
+                                    "created": 1677685133335,
+                                    "text": "秘密"
+                                },
+                                "children": []
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "data": {
+                    "id": "cqv2vk5u3dc0",
+                    "created": 1677677039602,
+                    "text": "4.科技信息检索与利用的重要环节"
+                },
+                "children": [
+                    {
+                        "data": {
+                            "id": "cqv4mzp2qm80",
+                            "created": 1677682010360,
+                            "text": "科技信息检索的主要步骤"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "cqv5ruq4bvk0",
+                                    "created": 1677685212470,
+                                    "text": "分析研究课题"
+                                },
+                                "children": []
+                            },
+                            {
+                                "data": {
+                                    "id": "cqv5ruq51wo0",
+                                    "created": 1677685212471,
+                                    "text": "选择检索系统"
+                                },
+                                "children": []
+                            },
+                            {
+                                "data": {
+                                    "id": "cqv5ruq4pe00",
+                                    "created": 1677685212471,
+                                    "text": "确定检索途径和方法"
+                                },
+                                "children": []
+                            },
+                            {
+                                "data": {
+                                    "id": "cqv5ruq4umo0",
+                                    "created": 1677685212471,
+                                    "text": "查找有价值的信息源线索"
+                                },
+                                "children": []
+                            },
+                            {
+                                "data": {
+                                    "id": "cqv5ruq4uj40",
+                                    "created": 1677685212471,
+                                    "text": "查找和获取原始文献"
+                                },
+                                "children": []
+                            },
+                            {
+                                "data": {
+                                    "id": "cqv5ruq4y3k0",
+                                    "created": 1677685212471,
+                                    "text": "阅读原始文献"
+                                },
+                                "children": []
+                            },
+                            {
+                                "data": {
+                                    "id": "cqv5ruq4w8w0",
+                                    "created": 1677685212471,
+                                    "text": "阅读文献"
+                                },
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "data": {
+                            "id": "cqv4mzp3idc0",
+                            "created": 1677682010361,
+                            "text": "带着目标去检索"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "cqv5s8ztp2g0",
+                                    "created": 1677685243532,
+                                    "text": "浏览材料"
+                                },
+                                "children": []
+                            },
+                            {
+                                "data": {
+                                    "id": "cqv5s8zu3g80",
+                                    "created": 1677685243532,
+                                    "text": "确定信息"
+                                },
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "data": {
+                            "id": "cqv4mzp3ezc0",
+                            "created": 1677682010361,
+                            "text": "科技信息检索的关键"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "cqv5sgvwfs00",
+                                    "created": 1677685260709,
+                                    "text": "what"
+                                },
+                                "children": []
+                            },
+                            {
+                                "data": {
+                                    "id": "cqv5sgvwztc0",
+                                    "created": 1677685260710,
+                                    "text": "where"
+                                },
+                                "children": []
+                            },
+                            {
+                                "data": {
+                                    "id": "cqv5sgvx31c0",
+                                    "created": 1677685260710,
+                                    "text": "how"
+                                },
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "data": {
+                            "id": "cqv4mzp3l1k0",
+                            "created": 1677682010361,
+                            "text": "所获知识的阅读理解与二次分析"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "cqv5swwhemg0",
+                                    "created": 1677685295572,
+                                    "text": "阅读内容"
+                                },
+                                "children": []
+                            },
+                            {
+                                "data": {
+                                    "id": "cqv5swwi2i00",
+                                    "created": 1677685295573,
+                                    "text": "阅读方式"
+                                },
+                                "children": []
+                            },
+                            {
+                                "data": {
+                                    "id": "cqv5swwhonc0",
+                                    "created": 1677685295573,
+                                    "text": "阅读记录"
+                                },
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "data": {
+                            "id": "cqv4mzp3ba00",
+                            "created": 1677682010361,
+                            "text": "及时记录检索结果与经验"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "cqv5thre5wo0",
+                                    "created": 1677685340977,
+                                    "text": "记录工具"
+                                },
+                                "children": []
+                            },
+                            {
+                                "data": {
+                                    "id": "cqv5thre9rk0",
+                                    "created": 1677685340977,
+                                    "text": "记录内容格式"
+                                },
+                                "children": []
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "data": {
+                    "id": "cqv2vk5u05c0",
+                    "created": 1677677039602,
+                    "text": "5.获取和管理科技信息的有效方法"
+                },
+                "children": [
+                    {
+                        "data": {
+                            "id": "cqv4np37o740",
+                            "created": 1677682065634,
+                            "text": "有效利用互联网"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "cqv5tuv0oew0",
+                                    "created": 1677685369494,
+                                    "text": "信息下载"
+                                },
+                                "children": []
+                            },
+                            {
+                                "data": {
+                                    "id": "cqv5tuv0vq00",
+                                    "created": 1677685369495,
+                                    "text": "信息上传"
+                                },
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "data": {
+                            "id": "cqv4np37vaw0",
+                            "created": 1677682065635,
+                            "text": "充分利用现有条件"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "cqv5ub1xkgg0",
+                                    "created": 1677685404741,
+                                    "text": "直检法"
+                                },
+                                "children": []
+                            },
+                            {
+                                "data": {
+                                    "id": "cqv5ub1yck80",
+                                    "created": 1677685404742,
+                                    "text": "引文法"
+                                },
+                                "children": []
+                            },
+                            {
+                                "data": {
+                                    "id": "cqv5ub1y8u00",
+                                    "created": 1677685404742,
+                                    "text": "工具法"
+                                },
+                                "children": []
+                            },
+                            {
+                                "data": {
+                                    "id": "cqv5ub1y8o80",
+                                    "created": 1677685404742,
+                                    "text": "循环法"
+                                },
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "data": {
+                            "id": "cqv4np384sg0",
+                            "created": 1677682065635,
+                            "text": "注意交叉补充与原文转换"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "cqv5utaphh40",
+                                    "created": 1677685444454,
+                                    "text": "如何交叉检索"
+                                },
+                                "children": []
+                            },
+                            {
+                                "data": {
+                                    "id": "cqv5utapej40",
+                                    "created": 1677685444454,
+                                    "text": "原文转换"
+                                },
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "data": {
+                            "id": "cqv4np37w0o0",
+                            "created": 1677682065635,
+                            "text": "所获文件的有效管理"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "cqv5ve397ig0",
+                                    "created": 1677685489716,
+                                    "text": "利用系统自带软件"
+                                },
+                                "children": []
+                            },
+                            {
+                                "data": {
+                                    "id": "cqv5ve39qi80",
+                                    "created": 1677685489716,
+                                    "text": "利用专业的文献管理软件"
+                                },
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "data": {
+                            "id": "cqv4np387yw0",
+                            "created": 1677682065635,
+                            "text": "信息源知识的鉴别筛选"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "cqv5wjyh4200",
+                                    "created": 1677685580851,
+                                    "text": "鉴别"
+                                },
+                                "children": []
+                            },
+                            {
+                                "data": {
+                                    "id": "cqv5wjyhgxc0",
+                                    "created": 1677685580852,
+                                    "text": "筛选"
+                                },
+                                "children": []
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "template": "default",
+    "theme": "fresh-blue",
+    "version": "1.4.43"
+}
