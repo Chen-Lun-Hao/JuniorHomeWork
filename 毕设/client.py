@@ -10,15 +10,15 @@ from PyQt5 import QtCore
 import sys
 from PyQt5.QtWidgets import QApplication
 
-from utils.TitleEdit import TitleWindow
+from widgets.MyTitle import TitleWindow
 from settings import *
-from ImagehandleEdit import ImageWindow
+from ui.ImageHandleToCanvas import MyMian
 
 
 if __name__ == "__main__":
     # 适配2k等高分辨率屏幕,低分辨率屏幕可以缺省
     QtCore.QCoreApplication.setAttribute(QtCore.Qt.AA_EnableHighDpiScaling)
     app = QApplication(sys.argv)
-    myWin = TitleWindow(widget_2_sub=ImageWindow())#主窗口控件，图标路径，标题
+    myWin = TitleWindow(widget_2_sub=MyMian())#主窗口控件，图标路径，标题
     myWin.show()
     sys.exit(app.exec_())

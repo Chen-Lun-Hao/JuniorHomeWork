@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'd:\JuniorHomeWork\毕设\Title.ui'
+# Form implementation generated from reading ui file 'd:\JuniorHomeWork\毕设\ui\Title.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.7
 #
@@ -41,8 +41,13 @@ class Ui_Form(object):
         self.label_2.setMaximumSize(QtCore.QSize(16777215, 16777215))
         self.label_2.setObjectName("label_2")
         self.horizontalLayout.addWidget(self.label_2)
-        spacerItem2 = QtWidgets.QSpacerItem(122, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        spacerItem2 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
         self.horizontalLayout.addItem(spacerItem2)
+        self.pushButton_4 = QtWidgets.QPushButton(self.widget)
+        self.pushButton_4.setObjectName("pushButton_4")
+        self.horizontalLayout.addWidget(self.pushButton_4)
+        spacerItem3 = QtWidgets.QSpacerItem(122, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.horizontalLayout.addItem(spacerItem3)
         self.pushButton = QtWidgets.QPushButton(self.widget)
         self.pushButton.setMaximumSize(QtCore.QSize(16777215, 16777215))
         self.pushButton.setObjectName("pushButton")
@@ -59,10 +64,12 @@ class Ui_Form(object):
         self.horizontalLayout.setStretch(1, 2)
         self.horizontalLayout.setStretch(2, 1)
         self.horizontalLayout.setStretch(3, 2)
-        self.horizontalLayout.setStretch(4, 100)
-        self.horizontalLayout.setStretch(5, 2)
-        self.horizontalLayout.setStretch(6, 2)
+        self.horizontalLayout.setStretch(4, 47)
+        self.horizontalLayout.setStretch(5, 5)
+        self.horizontalLayout.setStretch(6, 47)
         self.horizontalLayout.setStretch(7, 2)
+        self.horizontalLayout.setStretch(8, 2)
+        self.horizontalLayout.setStretch(9, 2)
         self.verticalLayout.addWidget(self.widget)
         self.widget_2 = QtWidgets.QWidget(Form)
         self.widget_2.setObjectName("widget_2")
@@ -76,6 +83,7 @@ class Ui_Form(object):
         Form.setWindowTitle(_translate("Form", "Form"))
         self.label.setText(_translate("Form", "TextLabel"))
         self.label_2.setText(_translate("Form", "Adreams"))
+        self.pushButton_4.setText(_translate("Form", "图片微调"))
         self.pushButton.setText(_translate("Form", "PushButton"))
         self.pushButton_2.setText(_translate("Form", "PushButton"))
         self.pushButton_3.setText(_translate("Form", "PushButton"))
