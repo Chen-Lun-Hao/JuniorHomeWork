@@ -206,7 +206,7 @@ class TitleWindow(QWidget, Ui_Form):
         self.pushButton_3.setProperty('other_name', 'title_bar_pushButton_3')
 
         # Qss美化
-        stylefile = '毕设/Title.qss'
+        stylefile = '毕设/Qss/Title.qss'
         qssStyle = CommonHelper.readQss(stylefile)
         self.setStyleSheet(qssStyle)
 
