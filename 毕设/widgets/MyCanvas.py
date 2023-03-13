@@ -2,7 +2,7 @@
 Description: 
 Author: Xiao
 Date: 2023-02-25 21:38:30
-LastEditTime: 2023-03-04 01:11:14
+LastEditTime: 2023-03-13 23:17:35
 LastEditors: Xiao
 '''
 # encoding:utf8
@@ -15,29 +15,29 @@ from PyQt5.QtGui import *
 
 
 class ImageWithMouseControl(QWidget):
-    
-    def __init__(self, parent=None,imgpath=None):
-        '''
-        parent: 父类
-        imgpath: 图片路径
-        '''
+
+    def __init__(self, parent=None):
         super().__init__(parent)
         self.parent = parent
-        self.img = QPixmap(imgpath)
-        self.scaled_img = self.img.scaled(self.size())#缩放，返回一个新的qpixmap
-        self.point = QPoint(0, 0)#定义了一个整形精度的点
-        self.pen = QPainter()#绘图工具
-        self.Color=Qt.blue#pen color: defult:blue画笔为蓝色
-        self.penwidth=4#pen width : default:4笔触是4
-        self.pen.setPen(QPen(self.Color,self.penwidth))#设置画笔颜色与粗细
+        self.img = QPixmap('111.png')#相当与画板
+        self.scaled_img = self.img.scaled(self.size())#相当与画板
+
+        self.point = QPoint(0, 0)#当前角点
+
+        self._startPos = QPoint(0, 0)#起始位置
+        self._lastPos = QPoint(0,0)#上一次鼠标位置
+        self._currentPos = QPoint(0,0)#当前的鼠标位置
+        self._thickness = 4       #默认画笔粗细为4px
+        self._penColor = QColor("blue")#设置默认画笔颜色为黑色
+        self.flag = False#是否绘画
+        #右键鼠标后的偏移量(左负右正)，同时，在图像之外的不能绘画
 
         self.initUI()
 
     def initUI(self):
-        #初始化
         self.left_click = False
         self.right_click = False
-        self.setWindowTitle('Image with mouse handle')
+        self.setWindowTitle('Image with mouse control')
 
     def paintEvent(self, e):
         #绘图事件
@@ -46,59 +46,53 @@ class ImageWithMouseControl(QWidget):
         #begin(param)的参数要指定绘图设备，即把图画在哪里
         #drawPixmap用于绘制QPixmap类型的对象
         if self.left_click:
-            # 左键，在图片上画画
-            self.pen = QPainter(self.scaled_img)# 在图片上画
-            self.pen.setPen(QPen(self.Color,self.penwidth,Qt.SolidLine))
-            self.pen.drawLine(self.x0,self.y0,self.x1,self.y1)
-            self.pen.begin(self)#paintevent开始执行
-            self.draw_img(self.pen)
-            self.pen.end()#结束
-        elif not self.left_click:
-            painter = QPainter()
-            painter.begin(self)
-            self.draw_img(painter)
-            painter.end()
+            # 左键
+            painter = QPainter(self.scaled_img)
+            painter.setPen(QPen(self._penColor,self._thickness))
+            painter.drawLine(self._lastPos, self._currentPos)
+            
+        # elif not self.left_click:
+        painter = QPainter()
+        painter.begin(self)
+        self.draw_img(painter)
+        painter.end()
 
-    def draw_img(self, painter):# 绘制QPixmap的图片
+    def draw_img(self, painter):
         painter.drawPixmap(self.point, self.scaled_img)
-
-    #鼠标点击事件
-    def mousePressEvent(self, e):
-        if e.button() == Qt.LeftButton:
-            self.left_click = True
-            self.right_click = False
-            self._startPos = e.pos()#绘画鼠标开始位置
-        if e.buttons() == Qt.RightButton:
-            self.right_click = True
-            self.left_click = False
-            self._startPos = e.pos()#移动鼠标开始位置
 
     #鼠标移动事件
     def mouseMoveEvent(self, e):  # 重写移动事件
         if self.left_click:#按住左键移动，绘画
+            self.flag = True#绘画标志
             #鼠标移动时，更新当前位置，并在上一个位置和当前位置间画线
-            self.__currentPos =  e.pos()#记录当前位置
-            self.pen.begin(self.scaled_img)
-            self.pen.drawLine(self._startPos, self.__currentPos)
-            self.pen.end()
-            self._startPos = self.__currentPos#更新开始位置
-            self.update() #更新显示
+            self._lastPos =  self._currentPos#记录当前位置
+            self._currentPos = e.pos() - self.point#防止右键移动时，绘画发生偏移
+            self.update()
         elif self.right_click:#按住右键移动
-            self._endPos = e.pos() - self._startPos
-            self.point = self.point + self._endPos#计算鼠标移动到哪里
-            self._startPos = e.pos()#鼠标位置
+            self._endPos = e.pos() - self._startPos#偏移量
+            print(self._endPos)
+            self.point = self.point + self._endPos#左上角的点也改变
+            self._startPos = e.pos()
             self.repaint()
             
         
     
-    #鼠标双击事件，鼠标复位
+    #鼠标双击事件
     def mouseDoubleClickEvent(self, e):
-        #从左上角开始绘画
         self.point = QPoint(0, 0)
-        self.scaled_img = self.img.scaled(self.size())
+        self.scaled_img = self.scaled_img.scaled(self.size())
         self.repaint()
 
-    
+    #鼠标点击事件
+    def mousePressEvent(self, e):
+        if e.button() == Qt.LeftButton:#开始绘画
+            self.left_click = True
+            self.right_click = False
+            self._currentPos = e.pos() - self.point#防止右键移动时，绘画发生偏移,绘画开始位置
+        if e.buttons() == Qt.RightButton:#开始移动
+            self.right_click = True
+            self.left_click = False
+            self._startPos = e.pos()
             
 
     #鼠标释放事件
@@ -106,16 +100,17 @@ class ImageWithMouseControl(QWidget):
         if e.button() == Qt.LeftButton:#左建
             self.left_click = False
             # self.scaled_img = self.img.scaled(self.size())
-            # self.repaint()
         elif e.button() == Qt.MiddleButton:#中建
             self.point = QPoint(0, 0)
-            self.scaled_img = self.img.scaled(self.size())
+            if self.flag:
+                self.scaled_img = self.scaled_img
+            else:
+                self.scaled_img = self.img.scaled(self.size())
             self.repaint()
+
         elif e.button() == Qt.RightButton:#右键释放
             self.right_click = False
-        #     self.point = QPoint(0, 0)
-        #     self.scaled_img = self.img.scaled(self.size())
-        #     self.repaint()
+
 
     #滚伦事件
     def wheelEvent(self, e):
