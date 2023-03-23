@@ -23,7 +23,7 @@ class MyMian(QWidget,Ui_Form):
         super(MyMian, self).__init__()
         self.setupUi(self)
         # pix = QPixmap('111.png')
-        self.w = ImageWithMouseControl(self.widget,'毕设/my.jpg')
+        self.w = ImageWithMouseControl(self.widget)#,'毕设/my.jpg')
         self.w.setGeometry(10, 10, 600, 600)#设置大小
     
     def my_Qss(self):

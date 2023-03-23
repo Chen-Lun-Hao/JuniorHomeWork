@@ -12,14 +12,14 @@ import sys
 from PyQt5.QtWidgets import *
 from PyQt5.QtCore import *
 from PyQt5.QtGui import *
-
+import utils.ResizeImage as ri#缩放图片
 
 class ImageWithMouseControl(QWidget):
 
     def __init__(self, parent=None):
         super().__init__(parent)
         self.parent = parent
-        self.img = QPixmap('111.png')#相当与画板
+        self.img = QPixmap('my.jpg')#相当与画板
         self.scaled_img = self.img.scaled(self.size())#相当与画板
 
         self.point = QPoint(0, 0)#当前角点
