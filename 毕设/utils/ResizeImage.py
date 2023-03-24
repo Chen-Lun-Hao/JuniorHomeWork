@@ -66,15 +66,17 @@ def resizejpg(opencv_image, pil_image, Multiple):
 # def resizepng():
 
 
-def letterbox_image(image, size):
+def letterbox_image(image, scale):
+    #Image类型的图片以及缩放倍数
     iw, ih = image.size
-    w, h = size
-    scale = min(w/iw, h/ih)
+    # w, h = size
+    # scale = min(w/iw, h/ih)
     nw = int(iw*scale)
     nh = int(ih*scale)
+    size = (nw, nh)
 
     image = image.resize((nw, nh), Image.BICUBIC)
-    new_image = Image.new('RGB', size, (128, 128, 128))
-    new_image.paste(image, ((w-nw)//2, (h-nh)//2))
-    return new_image
+    # new_image = Image.new('RGB', size, (128, 128, 128))
+    # new_image.paste(image, ((w-nw)//2, (h-nh)//2))
+    return image
 
