@@ -2,7 +2,7 @@
 Description: 
 Author: Xiao
 Date: 2023-02-25 21:38:30
-LastEditTime: 2023-03-13 23:17:35
+LastEditTime: 2023-03-25 20:19:08
 LastEditors: Xiao
 '''
 # encoding:utf8
@@ -142,3 +142,4 @@ class ImageWithMouseControl(QWidget):
             self.scaled_img = self.img.scaled(self.size())
             self.point = QPoint(0, 0)
             self.update()
+

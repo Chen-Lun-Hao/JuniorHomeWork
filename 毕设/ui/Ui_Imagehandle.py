@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'd:\JuniorHomeWork\毕设\Imagehandle.ui'
+# Form implementation generated from reading ui file 'd:\JuniorHomeWork\JuniorHomeWork\毕设\ui\Imagehandle.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.7
 #
@@ -28,12 +28,17 @@ class Ui_Form(object):
         self.pushButton_2 = QtWidgets.QPushButton(self.widget)
         self.pushButton_2.setObjectName("pushButton_2")
         self.verticalLayout.addWidget(self.pushButton_2)
-        self.pushButton_4 = QtWidgets.QPushButton(self.widget)
-        self.pushButton_4.setObjectName("pushButton_4")
-        self.verticalLayout.addWidget(self.pushButton_4)
         self.pushButton_3 = QtWidgets.QPushButton(self.widget)
         self.pushButton_3.setObjectName("pushButton_3")
         self.verticalLayout.addWidget(self.pushButton_3)
+        self.widget_2 = QtWidgets.QWidget(self.widget)
+        self.widget_2.setMaximumSize(QtCore.QSize(16777215, 16777215))
+        self.widget_2.setObjectName("widget_2")
+        self.verticalLayout.addWidget(self.widget_2)
+        self.verticalLayout.setStretch(0, 1)
+        self.verticalLayout.setStretch(1, 1)
+        self.verticalLayout.setStretch(2, 1)
+        self.verticalLayout.setStretch(3, 1)
         self.horizontalLayout.addWidget(self.widget)
         self.label = QtWidgets.QLabel(Form)
         self.label.setObjectName("label")
@@ -47,6 +52,5 @@ class Ui_Form(object):
         Form.setWindowTitle(_translate("Form", "Form"))
         self.pushButton.setText(_translate("Form", "笔刷"))
         self.pushButton_2.setText(_translate("Form", "颜色"))
-        self.pushButton_4.setText(_translate("Form", "橡皮"))
         self.pushButton_3.setText(_translate("Form", "图层"))
         self.label.setText(_translate("Form", "TextLabel"))
