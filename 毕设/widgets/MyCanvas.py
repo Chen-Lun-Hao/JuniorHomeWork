@@ -4,7 +4,7 @@
 Description: 
 Author: Xiao
 Date: 2023-02-25 21:38:30
-LastEditTime: 2023-03-25 22:57:57
+LastEditTime: 2023-03-25 23:30:52
 LastEditors: Xiao
 '''
 # encoding:utf8
@@ -27,9 +27,7 @@ class MyCanvas(QWidget):
         self.pen = pen#绘制所用的笔类型，QPainter
         self.layer = layer#位于第layer层
 
-        iw, ih = self.img.size#读取的图片尺寸
-        fw, fh = self.parent.width(), self.parent.height()#父控件大小
-        scale = min(fw/iw, fh/ih)#比例最小那个
+        scale = self.setImage()#返回比例
         self.img = ri.letterbox_image(self.img, scale=scale)#缩放
         self.img = iv.pilimg_to_qtpixmap(self.img)#转为qpixmap
 
@@ -37,6 +35,11 @@ class MyCanvas(QWidget):
 
         self.initUI()
 
+    def setImage(self):
+        iw, ih = self.img.size#读取的图片尺寸
+        fw, fh = self.parent.width(), self.parent.height()#父控件大小
+        scale = min(fw/iw, fh/ih)#比例最小那个
+        return scale
 
     def initUI(self):#变量初始化
         self.left_click = False
@@ -56,6 +59,7 @@ class MyCanvas(QWidget):
             self.pen.setPen(QPen(self._penColor,self._thickness))
             self.pen.drawLine(self._lastPos, self._currentPos)
             self.pen.end()
+        
             
         # elif not self.left_click:
         # painter = QPainter()
@@ -64,13 +68,51 @@ class MyCanvas(QWidget):
         self.pen.end()
         
 
-    
+    #鼠标点击事件
+    def mousePressEvent(self, e):
+        if e.button == Qt.LeftButton:
+            self.left_click = True#按下左键
+            self.right_click = False
+            self._currentPos = e.pos() - self.point#防止右键移动时，绘画发生偏移,绘画开始位置
+        elif e.button == Qt.RightButton:#按下右键
+            self.right_click = True#按下右键
+            self.left_click = False
+            self._startPos = e.pos()#开始位置
 
+    #鼠标移动事件
+    def mouseMoveEvent(self, e):
+        if self.left_click:#左键绘画
+            #鼠标移动时，更新当前位置，并在上一个位置和当前位置间画线
+            self._lastPos =  self._currentPos#记录当前位置
+            self._currentPos = e.pos() - self.point#防止右键移动时，绘画发生偏移
+            self.update()
+        elif self.right_click:#按住右键移动
+            self._endPos = e.pos() - self._startPos#偏移量
+            self.point = self.point + self._endPos#左上角的点也改变
+            self._startPos = e.pos()
+            self.repaint()
     
-    def mouseMoveEvent(self, e):#重写移动事件
-        
-    
+    #鼠标释放事件
+    def mouseReleaseEvent(self, e):
+        if e.button() == Qt.LeftButton:#左键
+            self.left_click = False#停止绘画
+        elif e.button() == Qt.RightButton:#右键
+            self.right_click = False#停止移动
+        elif e.button() == Qt.MiddleButton:#中键
+            self.point = QPoint(0, 0)#定位回原点
+            self.img = iv.pixmap2_pil(self.img)#转为pil
+            scale = self.setImage()#获取比例
+            self.img = ri.letterbox_image(self.img, scale=scale)#缩放
+            self.img = iv.pilimg_to_qtpixmap(self.img)#转为qpixmap
+            self.repaint()
 
+            
+
+
+
+    #鼠标双击事件
+    def mouseDoubleClickEvent(self, e):
+        return 0
     #     self.img = QPixmap('my.jpg')#相当与画板
     #     self.scaled_img = self.img.scaled(self.size())#相当与画板
 
@@ -86,28 +128,6 @@ class MyCanvas(QWidget):
 
     #     self.initUI()
 
-    # def initUI(self):
-    #     self.left_click = False
-    #     self.right_click = False
-    #     self.setWindowTitle('Image with mouse control')
-
-    # def paintEvent(self, e):
-    #     #绘图事件
-    #     #绘图时必须使用QPainter的实例，此处为__painter
-    #     #绘图在begin()函数与end()函数间进行
-    #     #begin(param)的参数要指定绘图设备，即把图画在哪里
-    #     #drawPixmap用于绘制QPixmap类型的对象
-    #     if self.left_click:
-    #         # 左键
-    #         painter = QPainter(self.scaled_img)
-    #         painter.setPen(QPen(self._penColor,self._thickness))
-    #         painter.drawLine(self._lastPos, self._currentPos)
-            
-    #     # elif not self.left_click:
-    #     painter = QPainter()
-    #     painter.begin(self)
-    #     self.draw_img(painter)
-    #     painter.end()
 
 
     # #鼠标移动事件
@@ -145,24 +165,9 @@ class MyCanvas(QWidget):
     #         self._startPos = e.pos()
             
 
-    # #鼠标释放事件
-    # def mouseReleaseEvent(self, e):
-    #     if e.button() == Qt.LeftButton:#左建
-    #         self.left_click = False
-    #         # self.scaled_img = self.img.scaled(self.size())
-    #     elif e.button() == Qt.MiddleButton:#中建
-    #         self.point = QPoint(0, 0)
-    #         if self.flag:
-    #             self.scaled_img = self.scaled_img
-    #         else:
-    #             self.scaled_img = self.img.scaled(self.size())
-    #         self.repaint()
-
-    #     elif e.button() == Qt.RightButton:#右键释放
-    #         self.right_click = False
 
 
-    # #滚伦事件
+    # #滚轮事件
     # def wheelEvent(self, e):
     #     if e.angleDelta().y() > 0:
     #         # 放大图片
