@@ -1,12 +1,13 @@
 '''
-Description: 
+Description:图像格式转换
 Author: Xiao
 Date: 2023-02-25 21:38:30
-LastEditTime: 2023-03-24 00:12:37
+LastEditTime: 2023-03-25 13:29:32
 LastEditors: Xiao
 '''
 import cv2
 from PyQt5.QtGui import *
+from PyQt5.QtCore import qDebug
 import numpy as np
 from PIL import ImageQt
 
@@ -51,13 +52,39 @@ def QImage_to_Opencv(img):
             cv_image[row, col, 2] = r
     return cv_image
 
+
+# opencv 转为 Qimage 
+def CV2QImage(cv_image):
+    
+    width = cv_image.shape[1] #获取图片宽度
+    height = cv_image.shape[0]  #获取图片高度
+    
+    pixmap = QPixmap(width, height) #根据已知的高度和宽度新建一个空的QPixmap,
+    qimg = pixmap.toImage()  #将pximap转换为QImage类型的qimg
+    
+    #循环读取cv_image的每个像素的r,g,b值，构成qRgb对象，再设置为qimg内指定位置的像素
+    for row in range(0, height):
+        for col in range(0,width):
+            b = cv_image[row,col,0]
+            g = cv_image[row,col,1]
+            r = cv_image[row,col,2]
+            
+            pix = qRgb(r, g, b)
+            qimg.setPixel(col, row, pix)
+    
+    return qimg #转换完成，返回
+    
 #PIL格式转QPixmap格式
-def pil2_pixmap(img):
-    pixmap = ImageQt.toqpixmap(img)
-    return pixmap
+def pilimg_to_qtpixmap(pilimg):
+    pilimg = np.asarray(pilimg)
+    #opencv转为qimage
+    height, width, depth = pilimg.shape#一般使用rgb三通道
+    # pilimg = cv2.cvtColor(pilimg, cv2.COLOR_BGR2RGB)
+    pilimg = QImage(pilimg.data, width, height, width * depth, QImage.Format_RGB888)
+    pilimg = QPixmap.fromImage(pilimg)
+    return pilimg
  
 #QPixmap格式转PIL格式
 def pixmap2_pil(img):
-
     img_obj = ImageQt.fromqpixmap(img)
     return  img_obj
