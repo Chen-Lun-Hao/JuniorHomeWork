@@ -13,12 +13,29 @@ from PyQt5.QtWidgets import *
 from PyQt5.QtCore import *
 from PyQt5.QtGui import *
 import utils.ResizeImage as ri#缩放图片
+import utils.Image_conversion as iv
+from PIL import Image
 
-class ImageWithMouseControl(QWidget):
+class MyCanvas(QWidget):
 
-    def __init__(self, parent=None):
-        super().__init__(parent)
-        self.parent = parent
+    def __init__(self, parent=None, img=None, pen=None):
+        super(MyCanvas, self).__init__(parent)
+        self.parent = parent# 父控件
+        self.img = img#PIL类型
+        self.pen = pen#绘制所用的笔类型
+
+        iw, ih = self.img.size
+        fw, fh = self.parent.width(), self.parent.height()
+        scale = min(fw/iw, fh/ih)#比例最小那个
+        self.img = ri.letterbox_image(self.img, scale=scale)#缩放
+        self.img = iv.pilimg_to_qtpixmap(self.img)#转为qpixmap
+
+        self.point = QPoint(0, 0)#当前角点
+
+
+
+
+
         self.img = QPixmap('my.jpg')#相当与画板
         self.scaled_img = self.img.scaled(self.size())#相当与画板
 

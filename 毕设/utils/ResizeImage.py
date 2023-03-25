@@ -2,7 +2,7 @@
 Description: 对图片进行无损缩放，三通道或者四通道，RGB或者RGBA
 Author: Xiao
 Date: 2023-03-22 23:12:13
-LastEditTime: 2023-03-22 23:30:27
+LastEditTime: 2023-03-25 20:30:34
 LastEditors: Xiao
 '''
 from PIL import Image
@@ -15,7 +15,7 @@ def letterbox_image(image, scale):
     # scale = min(w/iw, h/ih)
     nw = int(iw*scale)
     nh = int(ih*scale)
-    size = (nw, nh)
+    # size = (nw, nh)
 
     image = image.resize((nw, nh), Image.BICUBIC)
     # new_image = Image.new('RGB', size, (128, 128, 128))
