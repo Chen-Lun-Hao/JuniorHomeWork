@@ -4,7 +4,7 @@
 Description: 
 Author: Xiao
 Date: 2023-02-25 21:38:30
-LastEditTime: 2023-03-25 23:30:52
+LastEditTime: 2023-03-26 00:04:17
 LastEditors: Xiao
 '''
 # encoding:utf8
@@ -56,7 +56,7 @@ class MyCanvas(QWidget):
             # 左键绘画
             # painter = QPainter(self.img)
             self.pen.begin(self)
-            self.pen.setPen(QPen(self._penColor,self._thickness))
+            # self.pen.setPen(QPen(self._penColor,self._thickness))
             self.pen.drawLine(self._lastPos, self._currentPos)
             self.pen.end()
         
@@ -70,7 +70,7 @@ class MyCanvas(QWidget):
 
     #鼠标点击事件
     def mousePressEvent(self, e):
-        if e.button == Qt.LeftButton:
+        if e.button == Qt.LeftButton and self.layer == 0:#位于最上层
             self.left_click = True#按下左键
             self.right_click = False
             self._currentPos = e.pos() - self.point#防止右键移动时，绘画发生偏移,绘画开始位置
